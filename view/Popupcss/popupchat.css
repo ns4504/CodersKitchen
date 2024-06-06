@@ -1,0 +1,351 @@
+/* Button to open the chat form, initially hidden */
+.open-button {
+  display: none;
+  width: 60px;
+  height: auto;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 10px;
+  right: 28px;
+  animation: bounceIn 5s forwards;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 1), /* Initial glow effect */
+              0 4px 8px rgba(0, 0, 0, 0.2),  /* Slight shadow for depth */
+              0 6px 20px rgba(0, 0, 0, 0.19);  /* Larger shadow for depth */
+  transition: transform 0.2s;  /* Smooth transition for hover effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.open-button .image-container {
+  width: 50px;
+  height: 50px;
+  background: url('https://assets.codepen.io/7389588/cheflogo.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.open-button .button-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.open-button .button-content:hover {
+  background: linear-gradient(45deg, #2980b9, #3498db);
+  transform: scale(1.05);
+}
+
+.open-button .label {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 12px;
+  border: 1px solid #2980b9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.open-button:hover .label {
+  background-color: #2980b9;
+  transform: scale(1.1);
+}
+
+.open-button:hover {
+  transform: scale(1.1);  /* Slightly enlarge the button on hover */
+  box-shadow: 0 0 30px rgba(255, 255, 255, 1), /* Maintain initial glow effect */
+              0 8px 16px rgba(0, 0, 0, 0.4),  /* Enhanced shadow on hover */
+              0 12px 24px rgba(0, 0, 0, 0.38);  /* Enhanced larger shadow on hover */
+  opacity: 1;  /* Full opacity on hover */
+}
+
+/* Animation for chat button */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    box-shadow: 0 0 60px rgb(121, 96, 234); /* More intense glow at start */
+  }
+  30% {
+    transform: scale(2.5);
+    opacity: 1;
+    box-shadow: 0 0 45px rgba(79, 215, 236, 0.75); /* Intense glow during transition */
+  }
+  60% {
+    transform: scale(1.8);
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Reduce glow */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Final glow effect */
+  }
+}
+
+/* The popup chat, hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+ bottom: 5px;  /*Bottom right corner */
+  right: 10px;
+  border: 3px solid #f1f1f1;
+  z-index: 100;
+  width: 600px; /* Slim width */
+  max-height: 600px; /* Responsive height */
+  height: auto;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Form header for minimize, expand, and close buttons */
+.form-header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+  z-index: 10;
+  padding: 5px;
+}
+
+/* Minimize, full page, and close buttons */
+.minimize-button, .fullpage-button, .close-button {
+  background-color: #555;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+  z-index: 10;
+}
+
+.minimize-button:hover, .fullpage-button:hover, .close-button:hover {
+  opacity: 0.8;
+}
+
+/* Chat area */
+.chatContainer {
+  padding: 10px;
+  overflow-y: auto;
+  max-height: calc(100% - 120px); /* Adjusted height for better fit */
+  flex-grow: 1;
+  background-color: white; /* Ensure chat area has a solid background */
+  z-index: 5;
+}
+
+/* Form container */
+.form-container {
+  display: flex;
+  flex-direction: column; /* Changed from row to column for better layout */
+  align-items: stretch; /* Ensure child elements take full width */
+  padding: 10px;
+  background-color: #fff;
+  z-index: 10;
+}
+
+/* Full-width input */
+.form-container input,
+.form-container textarea,
+.form-container trix-editor { /* Include trix-editor */
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f1f1f1;
+  margin-bottom: 10px;
+  resize: none;
+  height: auto;
+  box-sizing: border-box;
+}
+
+/* Textarea focus effect */
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container trix-editor:focus { /* Include trix-editor */
+  background-color: #ddd;
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Submit/send button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+
+.full-page .form-container .btn {
+  width: auto;
+}
+
+/* Hover effects for buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+/* Full page chat popup with the same sizing as unexpanded */
+.full-page {
+  min-width: 100% !important; /* Same width as unexpanded */
+  min-height: 100% !important; /* Same height as unexpanded */
+  top: 10px;
+  right: 10px;
+  bottom: auto;
+  left: auto;
+  border-radius: 10px;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(240, 240, 240, 0.8); /* Different background color for full-page mode */
+  z-index: 100; /* Ensure full-page popup stays above other elements */
+}
+
+/* Background for the full-page view */
+.full-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('https://assets.codepen.io/7389588/cheflogo.jpg') no-repeat center center;
+  background-size: 100px 100px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Full-page header adjustments */
+.full-page .form-header {
+  justify-content: flex-end;
+  z-index: 10;
+}
+
+/* Full-page form container adjustments */
+.full-page .form-container {
+  order: 2; /* Ensure the form is at the bottom */
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0; /* Different background color for full-page mode */
+}
+
+/* Full-page chat container adjustments */
+.full-page .chatContainer {
+  order: 1; /* Ensure messages start at the top */
+  margin-bottom: 70px; /* Space for the fixed form container */
+  overflow-y: auto;
+  background-color: #f0f0f0; /* Different background color for full-page mode */
+  z-index: 5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+  .chat-popup, .full-page {
+    width: 80%;
+    max-width: 400px; /* Ensure a reasonable max width */
+    height: 100%; /* Responsive height */
+    max-height: 600px;
+  }
+
+  .form-container {
+    padding: 5px;
+  }
+
+  .form-container input,
+  .form-container textarea,
+  .form-container trix-editor {
+    padding: 8px;
+  }
+
+  .form-container .btn {
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .chat-popup, .full-page {
+    width: 70%;
+    max-width: 400px; /* Ensure a reasonable max width */
+    height: 100%; /* Responsive height */
+    max-height: 600px;
+  }
+
+  .form-container {
+    padding: 5px;
+  }
+
+  .form-container input,
+  .form-container textarea,
+  .form-container trix-editor {
+    padding: 8px;
+  }
+
+  .form-container .btn {
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-popup, .full-page {
+    width: 90%;
+    max-width: 350px; /* Ensure a reasonable max width */
+    height: 100%; /* Responsive height */
+    max-height: 600px;
+  }
+
+  .form-container {
+    padding: 5px;
+  }
+
+  .form-container input,
+  .form-container textarea,
+  .form-container trix-editor {
+    padding: 8px;
+  }
+
+  .form-container .btn {
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-popup, .full-page {
+    width: 95%;
+    max-width: 320px; /* Ensure a reasonable max width */
+    height: 100%; /* Responsive height */
+    max-height: 600px;
+  }
+
+  .form-container input,
+  .form-container textarea,
+  .form-container trix-editor {
+    padding: 6px;
+  }
+
+  .form-container .btn {
+    padding: 8px 14px;
+  }
+}
+
+ChatGPT

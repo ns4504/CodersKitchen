@@ -1,0 +1,258 @@
+#chatContainer > #myForm.chat-popup .Popup_container,
+#chatContainer > #myForm.chat-popup .card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin-top: 1px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: whitesmoke;
+  min-width: 300px;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  overflow: auto; /* Allow scrolling if content overflows */
+  transition: transform 0.3s;
+  height: auto;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.container:hover, .card:hover {
+  transform: translateY(-5px);
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  border-radius: 12px;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+#chatContainer > #myForm.chat-popup form {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  color: whitesmoke;
+  min-width: 300px;
+  max-width: 500px;
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  height: 100%; /* Ensure form takes full height */
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.chat-container {
+  background-color: #ecf0f1;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 85%;
+  max-width: 600px;
+  margin: 20px auto;
+  overflow-y: auto;
+  min-height: 400px;
+  position: relative; /* Ensure proper positioning */
+  top: 20px; /* Adjust to prevent cutoff */
+}
+#chatContainer > #myForm.chat-popup .chat-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+#chatContainer > #myForm.chat-popup .chat-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+#chatContainer > #myForm.chat-popup .chat-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+select, input[type="text"], button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, transform 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.messages, .responses {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.message, .response {
+  display: flex;
+  align-items: center;
+  max-width: 70%;
+  padding: 12px 18px;
+  border-radius: 20px;
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word; /* Ensure words break within the bubble */
+  width: fit-content; /* Ensure the bubble fits the content */
+  margin: 5px 0;
+  color: black;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards, slideIn 0.5s forwards;
+}
+
+.message {
+  background-color: #d1e7dd;
+  align-self: flex-start;
+  border-top-left-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.response {
+  background-color: grey;
+  align-self: flex-end;
+  border-top-right-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.message img, .response img {
+  max-width: 100%; /* Ensure image fits within the message bubble */
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px; /* Add some space above the image */
+}
+
+.message::after, .response::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.message::after {
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #d1e7dd transparent transparent;
+  left: -10px;
+  top: 10px;
+}
+
+.response::after {
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #f8d7da;
+  right: -10px;
+  top: 10px;
+}
+
+.response .response-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.button-container {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.button-container button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.button-container button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+  .container, .card, form {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container, .card, form {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container, .card, form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container, .card, form {
+    width: 95%;
+  }
+}

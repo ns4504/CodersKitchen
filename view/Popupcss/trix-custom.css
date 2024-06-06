@@ -1,0 +1,119 @@
+/* Customize the Trix editor toolbar */
+trix-toolbar {
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+trix-toolbar [data-trix-button-group] {
+  border: none;
+}
+
+trix-toolbar button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 5px;
+  transition: background-color 0.3s ease;
+}
+
+trix-toolbar button:hover {
+  background-color: #1e3c72;
+}
+
+/* Customize the Trix editor */
+trix-editor {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  min-height: 100px;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Ensure the Trix editor fits its container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  resize: none;
+}
+
+trix-editor:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Customize Trix editor scrollbar */
+trix-editor::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; /* Added height for horizontal scrollbar */
+}
+
+trix-editor::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+trix-editor::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+trix-editor::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* Firefox scrollbar customization */
+trix-editor {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+trix-editor::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+  trix-editor {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  trix-toolbar button {
+    padding: 4px;
+  }
+}
+
+@media (max-width: 1024px) {
+  trix-editor {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  trix-toolbar button {
+    padding: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  trix-editor {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  trix-toolbar button {
+    padding: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  trix-editor {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  trix-toolbar button {
+    padding: 3px;
+  }
+}

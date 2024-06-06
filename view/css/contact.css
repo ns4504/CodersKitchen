@@ -1,0 +1,181 @@
+body::before {
+    content: '';
+    position: fixed;  /* Changed from absolute to fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://images.unsplash.com/photo-1538645731800-4640c639bba7?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(1px); /* Adjust blur radius here */
+    z-index: -1;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh; /* Ensures body takes at least the height of the viewport */
+    box-sizing: border-box;
+  }
+  
+  
+  .container, chat-container  {
+     background: linear-gradient(
+      to bottom, 
+      #6a6d76,                 /* Lighter shade at the top */
+      #3b3e47                  /* Darker shade at the bottom */
+    );
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+      margin-top: 10px;  /* Optional: adds space above the container */
+      margin-bottom: 10px; /* Optional: adds space below the container */
+      display: flex; /* Use flexbox to center the image */
+      justify-content: center; /* Horizontally center the image */
+      align-items: center; /* Vertically center the image */
+      margin-left: auto; /* With auto margins on both left and right, the container centers horizontally */
+      margin-right: auto;
+    color: whitesmoke;
+      min-width: 300px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+      to bottom, 
+      #6a6d76,                 /* Lighter shade at the top */
+      #3b3e47                  /* Darker shade at the bottom */
+    );
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    min-width: 300px;
+    max-width: 500px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  .card {
+   background: linear-gradient(
+      to bottom, 
+      #6a6d76,                 /* Lighter shade at the top */
+      #3b3e47                  /* Darker shade at the bottom */
+    );
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+   margin-top: 10px;  /* Optional: adds space above the container */
+      margin-bottom: 10px; /* Optional: adds space below the container */
+      display: flex; /* Use flexbox to center the image */
+      justify-content: center; /* Horizontally center the image */
+      align-items: center; /* Vertically center the image */
+      margin-left: auto; /* With auto margins on both left and right, the container centers horizontally */
+      margin-right: auto;
+    color: whitesmoke;
+    min-width: 300px;
+  }
+  .card-header {
+     background: linear-gradient(
+      to bottom, 
+      #6a6d76,                 /* Lighter shade at the top */
+      #3b3e47                  /* Darker shade at the bottom */
+    );
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: whitesmoke;
+  }
+  
+  select, input[type="text"], button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #b7c3b7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
+  
+  button:hover {
+    background-color: #4cae4c;
+  }
+  
+  .chat-container {
+    margin-top: 20px;
+  }
+  /* Styles for message bubbles */
+  .messages, .responses {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .message, .response {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    position: relative;
+    word-wrap: break-word;
+    margin: 5px 0;
+    color: black; /* Set text color to black */
+  }
+  
+  .message {
+    background-color: #d1e7dd;
+    align-self: flex-start;
+  }
+  
+  .response {
+    background-color: #f8d7da;
+    align-self: flex-end;
+  }
+  
+  .message::after, .response::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  
+  .message::after {
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #d1e7dd transparent transparent;
+    left: -10px;
+    top: 10px;
+  }
+  
+  .response::after {
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #f8d7da;
+    right: -10px;
+    top: 10px;
+  }
+  
+  
+  
+  

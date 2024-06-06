@@ -1,0 +1,90 @@
+/* General Body Settings */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Navigation and Links */
+ul, nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li, nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #0275d8;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Card Style for Main Content Area */
+.card {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Updated for auto horizontal margins to center the card */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px; /* Sets the maximum width */
+    width: 90%; /* Ensures it scales nicely on smaller screens */
+}
+
+
+/* Form and Buttons */
+form {
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/* Navigation Bar Styling */
+nav {
+    background-color: #007bff; /* Primary color for the navigation bar */
+    padding: 10px 20px; /* Padding around the content in the navigation bar */
+    border-radius: 5px; /* Rounded corners for a softer look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Navigation List Styling */
+nav li {
+    display: inline; /* Keeps the navigation items in a line */
+    margin-right: 15px; /* Space between the navigation items */
+}
+
+/* Navigation Links Styling */
+nav a {
+    color: white; /* Text color for links in the navigation */
+    font-weight: bold; /* Makes the font of the links bold */
+    text-transform: uppercase; /* All caps for a more uniform appearance */
+    padding: 8px 12px; /* Padding around the link text for better clickability */
+}
+
+nav a:hover {
+    background-color: #0056b3; /* Darker blue on hover for interaction feedback */
+    border-radius: 3px; /* Rounded corners on hover */
+    text-decoration: none; /* Removes underline from links */
+}

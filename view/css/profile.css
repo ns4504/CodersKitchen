@@ -1,0 +1,22 @@
+li#saved {
+    list-style-type: none;
+    text-align: center;
+    padding-right: 2.75em;
+  }
+
+.prof {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f0f0f0;
+    margin: 20px 0;
+}
+
+.prof h1, .prof h2 {
+  color: black;
+  margin: 0em;
+}
+
+#pfp {
+  width: 15%;
+  height: 15%;
+}

@@ -1,0 +1,115 @@
+body::before {
+  content: '';
+  position: fixed;  /* Changed from absolute to fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1538645731800-4640c639bba7?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(1px); /* Adjust blur radius here */
+  z-index: -1;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh; /* Ensures body takes at least the height of the viewport */
+  box-sizing: border-box;
+}
+
+.recipe-container {
+  min-width: 300px;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Recipe selection dropdown styling */
+#recipeSelect {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Label and input styling */
+label {
+    font-weight: bold;
+    color: #666;
+}
+/* This CSS rule targets the label for 'servingsInput' and sets its color to white */
+label[for="servingsInput"] {
+    color: white;
+}
+
+.card {
+  background: linear-gradient(
+    to bottom, 
+    #6a6d76,                 /* Lighter shade at the top */
+    #3b3e47                  /* Darker shade at the bottom */
+  );
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: whitesmoke;
+}
+
+h1,
+h2 {
+  color: #333;
+  text-align: center; 
+}
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  margin-bottom: 10px;
+}
+.bold {
+  font-weight: bold;
+}
+
+input[type="number"] {
+  padding: 8px;
+  width: 50px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Recipe image container styling */
+.recipeImageContainer {
+    min-width: 300px;
+    border-radius: 15px; /* This makes the container circular */
+    overflow: hidden; /* Ensures the image doesn't overflow the container */
+    margin-top: 10px;  /* Optional: adds space above the container */
+    margin-bottom: 10px; /* Optional: adds space below the container */
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    margin-left: auto; /* With auto margins on both left and right, the container centers horizontally */
+    margin-right: auto;
+}
+
+/* Recipe image styling */
+.recipeImageContainer img {
+    max-width: 100%; /* Makes the image fill the container */
+    height: auto; /* Allows the image to maintain its aspect ratio */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    border: 3px solid #ccc; /* Optional: adds a border around the image */
+   border-radius: 15px; /* This makes the container circular */
+}
+
+
+
