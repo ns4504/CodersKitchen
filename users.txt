@@ -1,0 +1,17 @@
+ADMIN LOGIN
+CodersKitchenAdmin
+ckAdmin00@gmail.com
+AdminPassword1
+https://64.media.tumblr.com/b1f423482858785bccf7f453113252e3/01c80af5dfb50b6f-d6/s500x750/017a0a95d89e9185892f69897604daae9da944d2.png
+
+
+REGULAR USERS
+jdoe223
+johndoe223@gmail.com
+JohnPassword1
+https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg
+
+jdoe224
+janedoe224@gmail.com
+JanePassword1
+https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_square.jpg
